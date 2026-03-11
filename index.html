@@ -1040,7 +1040,7 @@ let S = {
     {id:1,nombre:"7MA MASCULINO",total:27,color:CAT_COLORS[0],dist:[3,3,3,3,3,3,3,3,3],parejas:{"1-A-1":"Ale - Fuentes","1-A-2":"Sol - Torti","1-A-3":"Bonnardel - Pagano","1-B-1":"Martin - Quiroga","1-B-2":"Vergara - Vergara","1-B-3":"Yone - Salinas","1-C-1":"Tieppo - Esposito","1-C-2":"Toranzo - Modon","1-C-3":"Martinez - Cabaña","1-D-1":"Salazar - Alcolea","1-D-2":"Rosales - Peron","1-D-3":"Navarro - Nieto","1-E-1":"Fischer - Noguerol","1-E-2":"Mari - Peñafiel","1-E-3":"Jordan - Pagano","1-F-1":"Etchegaray - Rubio","1-F-2":"Zapata - Olivera","1-F-3":"Esnal - Cano","1-G-1":"Alferez - Arecidiacono","1-G-2":"Esposito - Megis","1-G-3":"Diaz - Gisbert","1-H-1":"Schroder - Bravo","1-H-2":"Passo - Arenas","1-H-3":"Preli - Marin","1-I-1":"Fonzalida - Anzorena","1-I-2":"Viscardi - Parravicini","1-I-3":"Glusberger - Torres"},partidos:{},bracket:{}},
     {id:2,nombre:"6TA MASCULINO",total:19,color:CAT_COLORS[1],dist:[4,3,3,3,3,3],parejas:{"2-A-1":"Agüero - Barrera","2-A-2":"Pellizzon - López","2-A-3":"Uccelli - Calderon","2-A-4":"Calella - Sánchez","2-B-1":"Gutiérrez - Bustos","2-B-2":"Heredia - Gutiérrez","2-B-3":"Sosa - Jerez","2-C-1":"Rosas - Perez","2-C-2":"Escartin - Cipiriani","2-C-3":"Bravo - Olivera","2-D-1":"Martinez Barón - Quiles","2-D-2":"Cuello - Cabituna","2-D-3":"Paramio - Sanchez","2-E-1":"Morales - Lafalla","2-E-2":"Carranza - Sosa","2-E-3":"Milanesio - Sosa","2-F-1":"Farina - Serquera","2-F-2":"Arbeloa - Portero","2-F-3":"Tarres - Espinoza"},partidos:{},bracket:{}},
     {id:3,nombre:"5TA MASCULINO",total:12,color:CAT_COLORS[2],dist:[3,3,3,3],parejas:{"3-A-1":"Sandmeier - Tomattis","3-A-2":"Paez - Maya","3-A-3":"Zancan - Bovino","3-B-1":"Gauvron - Cossarin","3-B-2":"Motos - Díaz","3-B-3":"Carreras - González","3-C-1":"Gatica - Hernandez","3-C-2":"Achetoni - Gatica","3-C-3":"García - Saavedra","3-D-1":"Altamiranda - Ojeda","3-D-2":"Vellez - Massini","3-D-3":"Sosa - Pachu"},partidos:{},bracket:{}},
-    {id:4,nombre:"4TA MASCULINO",total:11,color:CAT_COLORS[3],dist:[4,4,3],parejas:{"4-A-1":"Rodríguez - Molinas","4-A-2":"Ortiz - Avalos","4-A-3":"Lopez - Quiles","4-A-4":"Vega - Ibero","4-B-1":"Andrade - Olivera","4-B-2":"Rodriguez - Preli","4-B-3":"Zabala - Saavedra","4-B-4":"Orellano - Cañelutti","4-C-1":"Sanchez - Achetoni","4-C-2":"Soria - Rivero","4-C-3":"Molina - Martelli"},partidos:{},bracket:{}},
+    {id:4,nombre:"4TA MASCULINO",total:9,color:CAT_COLORS[3],dist:[3,3,3],parejas:{"4-A-1":"Rodríguez - Molinas","4-A-2":"Ortiz - Avalos","4-A-3":"Lopez - Quiles","4-B-1":"Andrade - Olivera","4-B-2":"Rodriguez - Preli","4-B-3":"Zabala - Saavedra","4-C-1":"Sanchez - Achetoni","4-C-2":"Soria - Rivero","4-C-3":"Molina - Martelli"},partidos:{},bracket:{}},
     {id:5,nombre:"7MA FEMENINO",total:9,color:CAT_COLORS[4],dist:[3,3,3],parejas:{"5-A-1":"Goldar - Ortiz Iboldi","5-A-2":"Buades - Scardi","5-A-3":"Pardo - Wareiczuk","5-B-1":"Fernandez - Reinoso","5-B-2":"Funes - Pallero","5-B-3":"Toro - Garcia","5-C-1":"Oliver - Garcia","5-C-2":"Lemos - Saez","5-C-3":"Lemos - Garcia"},partidos:{},bracket:{}},
     {id:6,nombre:"6TA FEMENINO",total:8,color:CAT_COLORS[5],dist:[2,2,2,2],parejas:{"6-A-1":"Sterba - Rocher","6-A-2":"Huelmo - Tobio","6-B-1":"Salinas - Martinez","6-B-2":"Benítez - Belmonte","6-C-1":"González - Velez","6-C-2":"Rosa - Alvarado","6-D-1":"Cabal - Quiroga","6-D-2":"Lima - Velazco"},partidos:{},bracket:{}},
   ],
@@ -1855,9 +1855,26 @@ function getBracketRounds(cat, pos) {
       ]},
     ];
   }
-  else if(n>=9&&n<=11 || (nz===3 && n<=14)) {
-    // 3 zonas → CUARTOS(4) + SEMI(2) + FINAL — Reglamento APA (zonas de 4 pasan 3)
-    // CU1: 1°A vs 3°B | CU2: 2°B vs 2°C | CU3: 1°C vs 3°A | CU4: 1°B vs 2°A
+  else if(n>=9&&n<=11 && nz===3) {
+    // 9/10/11 parejas, 3 zonas de 3 → PLAYOFFS(2) + SEMI(2) + FINAL — Reglamento APA
+    // PO1: 2°B vs 2°C → gan enfrenta 1°A
+    // PO2: 1°C vs 2°A → gan enfrenta 1°B
+    rounds=[
+      {nombre:'PLAYOFFS',partidos:[
+        {rKey:'po',mi:0,t1:p2(1),t2:p2(2),apaL1:l2(1),apaL2:l2(2),nota:'Gan. enfrenta 1° Zona A',feedsInto:0},
+        {rKey:'po',mi:1,t1:p1(2),t2:p2(0),apaL1:l1(2),apaL2:l2(0),nota:'Gan. enfrenta 1° Zona B',feedsInto:1},
+      ]},
+      {nombre:'SEMIFINAL',partidos:[
+        {rKey:'semi',mi:0,t1:p1(0),t2:gan('po',0,p2(1),p2(2)),apaL1:l1(0),apaL2:'Gan. Playoff 1'},
+        {rKey:'semi',mi:1,t1:p1(1),t2:gan('po',1,p1(2),p2(0)),apaL1:l1(1),apaL2:'Gan. Playoff 2'},
+      ]},
+      {nombre:'FINAL',partidos:[
+        {rKey:'final',mi:0,t1:gan('semi',0,'?','?'),t2:gan('semi',1,'?','?')},
+      ]},
+    ];
+  }
+  else if(nz===3 && n<=14) {
+    // 3 zonas con zonas de 4 → CUARTOS(4) + SEMI(2) + FINAL — Reglamento APA (zonas de 4 pasan 3°)
     rounds=[
       {nombre:'CUARTOS DE FINAL',partidos:[
         {rKey:'cuartos',mi:0,t1:p1(0),t2:p3(1),apaL1:l1(0),apaL2:l3(1)},
@@ -2429,9 +2446,26 @@ function renderBracket() {
       ]},
     ];
   }
-  else if(n>=9&&n<=11 || (nz===3 && n<=14)) {
-    // 3 zonas → CUARTOS(4) + SEMI(2) + FINAL — Reglamento APA (zonas de 4 pasan 3)
-    // CU1: 1°A vs 3°B | CU2: 2°B vs 2°C | CU3: 1°C vs 3°A | CU4: 1°B vs 2°A
+  else if(n>=9&&n<=11 && nz===3) {
+    // 9/10/11 parejas, 3 zonas de 3 → PLAYOFFS(2) + SEMI(2) + FINAL — Reglamento APA
+    // PO1: 2°B vs 2°C → gan enfrenta 1°A
+    // PO2: 1°C vs 2°A → gan enfrenta 1°B
+    rounds=[
+      {nombre:'PLAYOFFS',partidos:[
+        {rKey:'po',mi:0,t1:p2(1),t2:p2(2),apaL1:l2(1),apaL2:l2(2),nota:'Gan. enfrenta 1° Zona A',feedsInto:0},
+        {rKey:'po',mi:1,t1:p1(2),t2:p2(0),apaL1:l1(2),apaL2:l2(0),nota:'Gan. enfrenta 1° Zona B',feedsInto:1},
+      ]},
+      {nombre:'SEMIFINAL',partidos:[
+        {rKey:'semi',mi:0,t1:p1(0),t2:gan('po',0,p2(1),p2(2)),apaL1:l1(0),apaL2:'Gan. Playoff 1'},
+        {rKey:'semi',mi:1,t1:p1(1),t2:gan('po',1,p1(2),p2(0)),apaL1:l1(1),apaL2:'Gan. Playoff 2'},
+      ]},
+      {nombre:'FINAL',partidos:[
+        {rKey:'final',mi:0,t1:gan('semi',0,'?','?'),t2:gan('semi',1,'?','?')},
+      ]},
+    ];
+  }
+  else if(nz===3 && n<=14) {
+    // 3 zonas con zonas de 4 → CUARTOS(4) + SEMI(2) + FINAL — Reglamento APA (zonas de 4 pasan 3°)
     rounds=[
       {nombre:'CUARTOS DE FINAL',partidos:[
         {rKey:'cuartos',mi:0,t1:p1(0),t2:p3(1),apaL1:l1(0),apaL2:l3(1)},
