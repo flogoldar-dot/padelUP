@@ -1019,7 +1019,7 @@ body.player-mode .b-match:hover { border-color: #e5e7eb !important; box-shadow: 
 <script>
 // ══════════════════════════════════════════════════════════════
 // BRAND COLORS for categories
-const CAT_COLORS = ['#005dd0','#c8ff00','#ef4444','#f59e0b','#8b5cf6','#10b981','#ec4899','#06b6d4'];
+const CAT_COLORS = ['#005dd0','#7a9e00','#ef4444','#f59e0b','#8b5cf6','#10b981','#ec4899','#06b6d4'];
 const CAT_BKGS   = ['rgba(0,93,208,0.12)','rgba(200,255,0,0.1)','rgba(239,68,68,0.12)',
                     'rgba(245,158,11,0.12)','rgba(139,92,246,0.12)','rgba(16,185,129,0.12)',
                     'rgba(236,72,153,0.12)','rgba(6,182,212,0.12)'];
@@ -1038,10 +1038,10 @@ let S = {
   activeCat: null,
   cats: [
     {id:1,nombre:"7MA MASCULINO",total:27,color:CAT_COLORS[0],dist:[3,3,3,3,3,3,3,3,3],parejas:{"1-A-1":"Yone - Salinas","1-A-2":"Tieppo - Esposito","1-A-3":"Vergara - Vergara","1-B-1":"Sol - Torti","1-B-2":"Esposito - Megis","1-B-3":"Passo - Arenas","1-C-1":"Martinez - Cabaña","1-C-2":"Rosales - Peron","1-C-3":"Martin - Quiroga","1-D-1":"Salazar - Alcolea","1-D-2":"Fischer - Noguerol","1-D-3":"Bonnardel - Pagano","1-E-1":"Jordan - Pagano","1-E-2":"Etchegaray - Rubio","1-E-3":"Esnal - Cano","1-F-1":"Fonzalida - Anzorena","1-F-2":"Diaz - Gisbert","1-F-3":"Preli - Marin","1-G-1":"Glusberger - Torres","1-G-2":"Viscardi - Parravicini","1-G-3":"Schroder - Bravo","1-H-1":"Mari - Peñafiel","1-H-2":"Alferez - Arecidiacono","1-H-3":"Ale - Fuentes","1-I-1":"Navarro - Nieto","1-I-2":"Toranzo - Modon","1-I-3":"Zapata - Olivera"},partidos:{"1-A-1vs2":{"cancha":"2","hora":"Jue 19hs"},"1-A-1vs3":{"cancha":"3","hora":"Vie 19hs"},"1-A-2vs3":{"cancha":"3","hora":"Sab 10hs"},"1-B-1vs2":{"cancha":"4","hora":"Jue 19hs"},"1-B-2vs3":{"cancha":"2","hora":"Vie 19hs"},"1-B-1vs3":{"cancha":"2","hora":"Sab 10hs"},"1-C-2vs3":{"cancha":"4","hora":"Jue 21hs"},"1-C-1vs2":{"cancha":"1","hora":"Vie 22hs"},"1-C-1vs3":{"cancha":"1","hora":"Sab 14hs"},"1-D-1vs3":{"cancha":"2","hora":"Jue 22hs"},"1-D-2vs3":{"cancha":"3","hora":"Vie 22hs"},"1-D-1vs2":{"cancha":"3","hora":"Sab 14hs"},"1-E-1vs2":{"cancha":"4","hora":"Jue 22hs"},"1-E-1vs3":{"cancha":"2","hora":"Vie 22hs"},"1-E-2vs3":{"cancha":"2","hora":"Sab 14hs"},"1-F-1vs2":{"cancha":"2","hora":"Jue 23hs"},"1-F-2vs3":{"cancha":"2","hora":"Vie 23hs"},"1-F-1vs3":{"cancha":"2","hora":"Sab 13hs"},"1-G-1vs3":{"cancha":"4","hora":"Jue 23hs"},"1-G-2vs3":{"cancha":"4","hora":"Vie 21hs"},"1-G-1vs2":{"cancha":"2","hora":"Sab 15hs"},"1-H-1vs2":{"cancha":"4","hora":"Vie 19hs"},"1-H-2vs3":{"cancha":"4","hora":"Sab 14hs"},"1-H-1vs3":{"cancha":"conf.","hora":"conf."},"1-I-1vs2":{"cancha":"2","hora":"Jue 14hs"},"1-I-1vs3":{"cancha":"4","hora":"Vie 20hs"},"1-I-2vs3":{"cancha":"2","hora":"Sab 9hs"}},bracket:{}},
-    {id:2,nombre:"6TA MASCULINO",total:18,color:CAT_COLORS[1],dist:[3,3,3,3,3,3],parejas:{"2-A-1":"Uccelli - Calderon","2-A-2":"Carranza - Sosa","2-A-3":"Pellizzon - López","2-B-1":"Sosa - Jerez","2-B-2":"Escartin - Cipiriani","2-B-3":"Calella - Sánchez","2-C-1":"Bravo - Olivera","2-C-2":"Gutiérrez - Bustos","2-C-3":"Heredia - Gutiérrez","2-D-1":"Cuello - Cabituna","2-D-2":"Martinez Barón - Quiles","2-D-3":"Rosas - Perez","2-E-1":"Morales - Lafalla","2-E-2":"Milanesio - Sosa","2-E-3":"Arbeloa - Portero","2-F-1":"Agüero - Barrera","2-F-2":"Paramio - Sanchez","2-F-3":"Farina - Serquera"},partidos:{"2-A-1vs3":{"cancha":"1","hora":"Jue 18hs"},"2-A-1vs2":{"cancha":"1","hora":"Vie 18hs"},"2-A-2vs3":{"cancha":"3","hora":"Sab 15hs"},"2-B-1vs3":{"cancha":"1","hora":"Jue 23hs"},"2-B-2vs3":{"cancha":"1","hora":"Vie 23hs"},"2-B-1vs2":{"cancha":"1","hora":"Sab 15hs"},"2-C-2vs3":{"cancha":"3","hora":"Vie 23hs"},"2-C-1vs2":{"cancha":"conf.","hora":"conf."},"2-C-1vs3":{"cancha":"conf.","hora":"conf."},"2-D-2vs3":{"cancha":"3","hora":"Jue 22hs"},"2-D-1vs3":{"cancha":"1","hora":"Sab 11hs"},"2-D-1vs2":{"cancha":"conf.","hora":"conf."},"2-E-1vs3":{"cancha":"3","hora":"Jue 23hs"},"2-E-2vs3":{"cancha":"3","hora":"Vie 18hs"},"2-E-1vs2":{"cancha":"1","hora":"Sab 16hs"},"2-F-1vs2":{"cancha":"3","hora":"Sab 16hs"},"2-F-1vs3":{"cancha":"3","hora":"Jue 20hs"},"2-F-2vs3":{"cancha":"3","hora":"Vie 20hs"}},bracket:{}},
-    {id:3,nombre:"5TA MASCULINO",total:12,color:CAT_COLORS[2],dist:[3,3,3,3],parejas:{"3-A-1":"Gauvron - Cossarin","3-A-2":"García - Saavedra","3-A-3":"Achetoni - Gatica","3-B-1":"Gatica - Hernandez","3-B-2":"Zancan - Bovino","3-B-3":"Carreras - González","3-C-1":"Sandmeier - Tomattis","3-C-2":"Motos - Díaz","3-C-3":"Sosa - Ibañez","3-D-1":"Vellez - Massini","3-D-2":"Altamiranda - Ojeda","3-D-3":"Paez - Maya"},partidos:{"3-A-1vs2":{"cancha":"1","hora":"Jue 22hs"},"3-A-1vs3":{"cancha":"1","hora":"Vie 19hs"},"3-A-2vs3":{"cancha":"1","hora":"Sab 17hs"},"3-B-1vs2":{"cancha":"1","hora":"Jue 14hs"},"3-B-2vs3":{"cancha":"1","hora":"Vie 14hs"},"3-B-1vs3":{"cancha":"3","hora":"Vie 21hs"},"3-C-2vs3":{"cancha":"3","hora":"Jue 21hs"},"3-C-1vs3":{"cancha":"3","hora":"Sab 13hs"},"3-C-1vs2":{"cancha":"conf.","hora":"conf."},"3-D-1vs3":{"cancha":"2","hora":"Jue 21hs"},"3-D-1vs2":{"cancha":"conf.","hora":"conf."},"3-D-2vs3":{"cancha":"3","hora":"Vie 20hs"}},bracket:{}},
-    {id:4,nombre:"4TA MASCULINO",total:10,color:CAT_COLORS[3],dist:[2,2,2,2,2],parejas:{"4-A-1":"Andrade - Olivera","4-A-2":"Lopez - Quiles","4-B-1":"Soria - Rivero","4-B-2":"Rodriguez - Molinas","4-C-1":"Rodriguez - Preli","4-C-2":"Zabala - Saavedra","4-D-1":"Molina - Martelli","4-D-2":"Ortiz - Avalos","4-E-1":"Orellano - Cañelutti","4-E-2":"Sanchez - Achetoni"},partidos:{"4-A-1vs2":{"cancha":"1","hora":"Jue 20hs"},"4-B-1vs2":{"cancha":"1","hora":"Jue 21hs"},"4-C-1vs2":{"cancha":"1","hora":"Sab 13hs"},"4-D-1vs2":{"cancha":"1","hora":"Sab 9hs"},"4-E-1vs2":{"cancha":"1","hora":"Vie 21hs"}},bracket:{}},
-    {id:5,nombre:"7MA FEMENINO",total:9,color:CAT_COLORS[4],dist:[3,3,3],parejas:{"5-A-1":"Fernandez - Reinoso","5-A-2":"Goldar - Ortiz Iboldi","5-A-3":"Toro - Garcia","5-B-1":"Funes - Pallero","5-B-2":"Lemos - Saez","5-B-3":"Pardo - Wareiczuk","5-C-1":"Lemos - Garcia","5-C-2":"Buades - Viscardi","5-C-3":"Oliver - Garcia"},partidos:{"5-A-2vs3":{"cancha":"3","hora":"Jue 19hs"},"5-A-1vs2":{"cancha":"2","hora":"Vie 18hs"},"5-A-1vs3":{"cancha":"4","hora":"Sab 16hs"},"5-B-1vs3":{"cancha":"4","hora":"Jue 20hs"},"5-B-2vs3":{"cancha":"2","hora":"Vie 21hs"},"5-B-1vs2":{"cancha":"conf.","hora":"conf."},"5-C-1vs3":{"cancha":"3","hora":"Jue 14hs"},"5-C-2vs3":{"cancha":"2","hora":"Sab 16hs"},"5-C-1vs2":{"cancha":"conf.","hora":"conf."}},bracket:{}},
+    {id:2,nombre:"6TA MASCULINO",total:18,color:CAT_COLORS[1],dist:[3,3,3,3,3,3],parejas:{"2-A-1":"Uccelli - Calderon","2-A-2":"Carranza - Sosa","2-A-3":"Pellizzon - López","2-B-1":"Sosa - Jerez","2-B-2":"Escartin - Cipiriani","2-B-3":"Calella - Sánchez","2-C-1":"Bravo - Olivera","2-C-2":"Gutiérrez - Bustos","2-C-3":"Heredia - Gutiérrez","2-D-1":"Cuello - Cabituna","2-D-2":"Martinez Barón - Quiles","2-D-3":"Rosas - Perez","2-E-1":"Morales - Lafalla","2-E-2":"Milanesio - Sosa","2-E-3":"Arbeloa - Portero","2-F-1":"Agüero - Barrera","2-F-2":"Paramio - Sanchez","2-F-3":"Farina - Serquera"},partidos:{"2-A-1vs3":{"cancha":"1","hora":"Jue 18hs"},"2-A-1vs2":{"cancha":"1","hora":"Vie 18hs"},"2-A-2vs3":{"cancha":"3","hora":"Sab 15hs"},"2-B-1vs3":{"cancha":"1","hora":"Jue 23hs"},"2-B-2vs3":{"cancha":"1","hora":"Vie 23hs"},"2-B-1vs2":{"cancha":"1","hora":"Sab 15hs"},"2-C-2vs3":{"cancha":"3","hora":"Vie 23hs"},"2-C-1vs2":{"cancha":"4","hora":"Sab 15hs"},"2-C-1vs3":{"cancha":"1","hora":"Jue 20hs"},"2-D-2vs3":{"cancha":"3","hora":"Jue 22hs"},"2-D-1vs3":{"cancha":"1","hora":"Sab 11hs"},"2-D-1vs2":{"cancha":"3","hora":"Vie 23hs"},"2-E-1vs3":{"cancha":"3","hora":"Jue 23hs"},"2-E-2vs3":{"cancha":"3","hora":"Vie 18hs"},"2-E-1vs2":{"cancha":"1","hora":"Sab 16hs"},"2-F-1vs2":{"cancha":"3","hora":"Sab 16hs"},"2-F-1vs3":{"cancha":"3","hora":"Jue 20hs"},"2-F-2vs3":{"cancha":"3","hora":"Vie 20hs"}},bracket:{}},
+    {id:3,nombre:"5TA MASCULINO",total:12,color:CAT_COLORS[2],dist:[3,3,3,3],parejas:{"3-A-1":"Gauvron - Cossarin","3-A-2":"García - Saavedra","3-A-3":"Achetoni - Gatica","3-B-1":"Gatica - Hernandez","3-B-2":"Zancan - Bovino","3-B-3":"Carreras - González","3-C-1":"Sandmeier - Tomattis","3-C-2":"Motos - Díaz","3-C-3":"Sosa - Ibañez","3-D-1":"Vellez - Massini","3-D-2":"Altamiranda - Ojeda","3-D-3":"Paez - Maya"},partidos:{"3-A-1vs2":{"cancha":"1","hora":"Jue 22hs"},"3-A-1vs3":{"cancha":"1","hora":"Vie 19hs"},"3-A-2vs3":{"cancha":"1","hora":"Sab 17hs"},"3-B-1vs2":{"cancha":"1","hora":"Jue 14hs"},"3-B-2vs3":{"cancha":"1","hora":"Vie 14hs"},"3-B-1vs3":{"cancha":"3","hora":"Vie 21hs"},"3-C-2vs3":{"cancha":"3","hora":"Jue 21hs"},"3-C-1vs3":{"cancha":"3","hora":"Sab 13hs"},"3-C-1vs2":{"cancha":"2","hora":"Vie 21hs"},"3-D-1vs3":{"cancha":"2","hora":"Jue 21hs"},"3-D-1vs2":{"cancha":"4","hora":"Sab 13hs"},"3-D-2vs3":{"cancha":"3","hora":"Vie 20hs"}},bracket:{}},
+    {id:4,nombre:"4TA MASCULINO",total:10,color:CAT_COLORS[3],dist:[2,2,2,2,2],parejas:{"4-A-1":"Andrade - Olivera","4-A-2":"Lopez - Quiles","4-B-1":"Soria - Rivero","4-B-2":"Rodriguez - Molinas","4-C-1":"Rodriguez - Preli","4-C-2":"Zabala - Saavedra","4-D-1":"Molina - Martelli","4-D-2":"Ortiz - Avalos","4-E-1":"Orellano - Cañelutti","4-E-2":"Sanchez - Achetoni"},partidos:{"4-A-1vs2":{"cancha":"1","hora":"Jue 20hs"},"4-B-1vs2":{"cancha":"1","hora":"Jue 21hs"},"4-C-1vs2":{"cancha":"2","hora":"Jue 21hs"},"4-D-1vs2":{"cancha":"1","hora":"Sab 9hs"},"4-E-1vs2":{"cancha":"1","hora":"Vie 21hs"}},bracket:{}},
+    {id:5,nombre:"7MA FEMENINO",total:9,color:CAT_COLORS[4],dist:[3,3,3],parejas:{"5-A-1":"Fernandez - Reinoso","5-A-2":"Goldar - Ortiz Iboldi","5-A-3":"Toro - Garcia","5-B-1":"Funes - Pallero","5-B-2":"Lemos - Saez","5-B-3":"Pardo - Wareiczuk","5-C-1":"Lemos - Garcia","5-C-2":"Buades - Viscardi","5-C-3":"Oliver - Garcia"},partidos:{"5-A-2vs3":{"cancha":"3","hora":"Jue 19hs"},"5-A-1vs2":{"cancha":"4","hora":"Vie 22hs"},"5-A-1vs3":{"cancha":"4","hora":"Sab 16hs"},"5-B-1vs3":{"cancha":"4","hora":"Jue 20hs"},"5-B-2vs3":{"cancha":"2","hora":"Vie 18hs"},"5-B-1vs2":{"cancha":"2","hora":"Sab 11hs"},"5-C-1vs3":{"cancha":"3","hora":"Jue 14hs"},"5-C-2vs3":{"cancha":"2","hora":"Sab 16hs"},"5-C-1vs2":{"cancha":"2","hora":"Vie 20hs"}},bracket:{}},
     {id:6,nombre:"6TA FEMENINO",total:8,color:CAT_COLORS[5],dist:[2,2,2,2],parejas:{"6-A-1":"González - Velez","6-A-2":"Huelmo - Tobio","6-B-1":"Sterba - Rocher","6-B-2":"Benítez - Belmonte","6-C-1":"Salinas - Martinez","6-C-2":"Rosa - Alvarado","6-D-1":"Cabal - Del Rio","6-D-2":"Lima - Velazco"},partidos:{"6-A-1vs2":{"cancha":"1","hora":"Sab 10hs"},"6-B-1vs2":{"cancha":"2","hora":"Jue 20hs"},"6-C-1vs2":{"cancha":"2","hora":"Vie 14hs"},"6-D-1vs2":{"cancha":"2","hora":"Vie 20hs"}},bracket:{}},
   ],
   importMode: 'paste',
@@ -1590,6 +1590,7 @@ function updScore(catId,zlbl,pa,pb,field,val) {
   const strFields = ['cancha','hora'];
   cat.partidos[pkey][field] = strFields.includes(field) ? val : (val===''?'':parseInt(val));
   renderCarga();
+  renderFixture();
   if(window.fbSave) fbSave();
 }
 
@@ -1735,8 +1736,11 @@ function getBracketRounds(cat, pos) {
     const m=getM(rKey,mi);
     if(m.winner===1 && m.t1) return m.t1;
     if(m.winner===2 && m.t2) return m.t2;
-    if(rKey==='po') return `Gan. Playoff ${mi+1}`;
-    return `Gan. P.${mi+1}`;
+    if(rKey==='po') return `PO${mi+1}`;
+    if(rKey==='octavos') return `OC${mi+1}`;
+    if(rKey==='cuartos') return `QF${mi+1}`;
+    if(rKey==='semi') return `S${mi+1}`;
+    return `P${mi+1}`;
   }
   const todasZonasDe2 = cat.dist.every(npp=>npp===2);
 
@@ -1756,8 +1760,8 @@ function getBracketRounds(cat, pos) {
         {rKey:'cuartos',mi:3,t1:p1(3),t2:p2(2),apaL1:l1(3),apaL2:l2(2)},
       ]},
       {nombre:'SEMIFINAL',partidos:[
-        {rKey:'semi',mi:0,t1:gan('cuartos',0,p1(0),p2(1)),t2:gan('cuartos',1,p1(2),p2(3))},
-        {rKey:'semi',mi:1,t1:gan('cuartos',2,p1(1),p2(0)),t2:gan('cuartos',3,p1(3),p2(2))},
+        {rKey:'semi',mi:0,t1:gan('cuartos',0,'?','?'),t2:gan('cuartos',1,'?','?')},
+        {rKey:'semi',mi:1,t1:gan('cuartos',2,'?','?'),t2:gan('cuartos',3,'?','?')},
       ]},
       {nombre:'FINAL',partidos:[
         {rKey:'final',mi:0,t1:gan('semi',0,'?','?'),t2:gan('semi',1,'?','?')},
@@ -1765,23 +1769,23 @@ function getBracketRounds(cat, pos) {
     ];
   }
   else if(todasZonasDe2 && nz===5) {
-    // 10 parejas, 5 zonas de 2 → todos pasan pero son 10, necesitamos playoff para llegar a 8
-    // 5 primeros directos a cuartos, 5 segundos: 4 juegan playoff, 1 tiene bye (lo elegís vos)
-    // Por defecto: 2°A tiene bye, los otros 4 segundos hacen playoffs
+    // 10 parejas, 5 zonas de 2
+    // PO1: 2°A vs 2°C | PO2: 2°D vs 2°E
+    // QF1: 2°B vs 1°C | QF2: 1°A vs GanPO2 | QF3: 1°D vs 1°E | QF4: 1°B vs GanPO1
     rounds=[
       {nombre:'PLAYOFFS',partidos:[
-        {rKey:'po',mi:0,t1:p2(1),t2:p2(2),apaL1:l2(1),apaL2:l2(2),nota:'Gan. enfrenta 1° Zona B',feedsInto:2},
-        {rKey:'po',mi:1,t1:p2(3),t2:p2(4),apaL1:l2(3),apaL2:l2(4),nota:'Gan. enfrenta 1° Zona A',feedsInto:0},
+        {rKey:'po',mi:0,t1:p2(0),t2:p2(2),apaL1:l2(0),apaL2:l2(2)},
+        {rKey:'po',mi:1,t1:p2(3),t2:p2(4),apaL1:l2(3),apaL2:l2(4)},
       ]},
       {nombre:'CUARTOS DE FINAL',partidos:[
-        {rKey:'cuartos',mi:0,t1:p1(0),t2:gan('po',1,p2(3),p2(4)),apaL1:l1(0),apaL2:'Gan. Playoff 2'},
-        {rKey:'cuartos',mi:1,t1:p2(1),t2:p1(2),apaL1:l2(1),apaL2:l1(2)},
-        {rKey:'cuartos',mi:2,t1:p1(1),t2:gan('po',0,p2(1),p2(2)),apaL1:l1(1),apaL2:'Gan. Playoff 1'},
-        {rKey:'cuartos',mi:3,t1:p1(3),t2:p1(4),apaL1:l1(3),apaL2:l1(4)},
+        {rKey:'cuartos',mi:0,t1:p2(1),t2:p1(2),apaL1:l2(1),apaL2:l1(2)},
+        {rKey:'cuartos',mi:1,t1:p1(0),t2:gan('po',1,'?','?'),apaL1:l1(0),apaL2:'PO2'},
+        {rKey:'cuartos',mi:2,t1:p1(3),t2:p1(4),apaL1:l1(3),apaL2:l1(4)},
+        {rKey:'cuartos',mi:3,t1:p1(1),t2:gan('po',0,'?','?'),apaL1:l1(1),apaL2:'PO1'},
       ]},
       {nombre:'SEMIFINAL',partidos:[
-        {rKey:'semi',mi:0,t1:gan('cuartos',0,p1(0),p2(0)),t2:gan('cuartos',1,p1(1),'?')},
-        {rKey:'semi',mi:1,t1:gan('cuartos',2,p1(2),'?'),t2:gan('cuartos',3,p1(3),p1(4))},
+        {rKey:'semi',mi:0,t1:gan('cuartos',0,'?','?'),t2:gan('cuartos',1,'?','?')},
+        {rKey:'semi',mi:1,t1:gan('cuartos',2,'?','?'),t2:gan('cuartos',3,'?','?')},
       ]},
       {nombre:'FINAL',partidos:[
         {rKey:'final',mi:0,t1:gan('semi',0,'?','?'),t2:gan('semi',1,'?','?')},
@@ -1796,7 +1800,7 @@ function getBracketRounds(cat, pos) {
         {rKey:'semi',mi:1,t1:p2(0),t2:p1(1),apaL1:l2(0),apaL2:l1(1)},
       ]},
       {nombre:'FINAL',partidos:[
-        {rKey:'final',mi:0,t1:gan('semi',0,p1(0),p2(1)),t2:gan('semi',1,p2(0),p1(1))},
+        {rKey:'final',mi:0,t1:gan('semi',0,'?','?'),t2:gan('semi',1,'?','?')},
       ]},
     ];
   }
@@ -1810,8 +1814,8 @@ function getBracketRounds(cat, pos) {
         {rKey:'po',mi:1,t1:p1(2),t2:p2(0),apaL1:l1(2),apaL2:l2(0),nota:'Gan. enfrenta 1° Zona B',feedsInto:1},
       ]},
       {nombre:'SEMIFINAL',partidos:[
-        {rKey:'semi',mi:0,t1:p1(0),t2:gan('po',0,p2(1),p2(2)),apaL1:l1(0),apaL2:'Gan. Playoff 1'},
-        {rKey:'semi',mi:1,t1:p1(1),t2:gan('po',1,p1(2),p2(0)),apaL1:l1(1),apaL2:'Gan. Playoff 2'},
+        {rKey:'semi',mi:0,t1:p1(0),t2:gan('po',0,'?','?'),apaL1:l1(0),apaL2:'PO1'},
+        {rKey:'semi',mi:1,t1:p1(1),t2:gan('po',1,'?','?'),apaL1:l1(1),apaL2:'PO2'},
       ]},
       {nombre:'FINAL',partidos:[
         {rKey:'final',mi:0,t1:gan('semi',0,'?','?'),t2:gan('semi',1,'?','?')},
@@ -1828,8 +1832,8 @@ function getBracketRounds(cat, pos) {
         {rKey:'cuartos',mi:3,t1:p1(1),t2:p2(0),apaL1:l1(1),apaL2:l2(0)},
       ]},
       {nombre:'SEMIFINAL',partidos:[
-        {rKey:'semi',mi:0,t1:gan('cuartos',0,p1(0),p3(1)),t2:gan('cuartos',1,p2(1),p2(2))},
-        {rKey:'semi',mi:1,t1:gan('cuartos',2,p1(2),p3(0)),t2:gan('cuartos',3,p1(1),p2(0))},
+        {rKey:'semi',mi:0,t1:gan('cuartos',0,'?','?'),t2:gan('cuartos',1,'?','?')},
+        {rKey:'semi',mi:1,t1:gan('cuartos',2,'?','?'),t2:gan('cuartos',3,'?','?')},
       ]},
       {nombre:'FINAL',partidos:[
         {rKey:'final',mi:0,t1:gan('semi',0,'?','?'),t2:gan('semi',1,'?','?')},
@@ -1847,8 +1851,8 @@ function getBracketRounds(cat, pos) {
         {rKey:'cuartos',mi:3,t1:p2(3),t2:p1(1),apaL1:l2(3),apaL2:l1(1)},
       ]},
       {nombre:'SEMIFINAL',partidos:[
-        {rKey:'semi',mi:0,t1:gan('cuartos',0,p1(0),p2(2)),t2:gan('cuartos',1,p2(1),p1(3))},
-        {rKey:'semi',mi:1,t1:gan('cuartos',2,p1(2),p2(0)),t2:gan('cuartos',3,p2(3),p1(1))},
+        {rKey:'semi',mi:0,t1:gan('cuartos',0,'?','?'),t2:gan('cuartos',1,'?','?')},
+        {rKey:'semi',mi:1,t1:gan('cuartos',2,'?','?'),t2:gan('cuartos',3,'?','?')},
       ]},
       {nombre:'FINAL',partidos:[
         {rKey:'final',mi:0,t1:gan('semi',0,'?','?'),t2:gan('semi',1,'?','?')},
@@ -1865,14 +1869,14 @@ function getBracketRounds(cat, pos) {
         {rKey:'po',mi:1,t1:p2(0),t2:p2(3),apaL1:l2(0),apaL2:l2(3)},
       ]},
       {nombre:'CUARTOS DE FINAL',partidos:[
-        {rKey:'cuartos',mi:0,t1:p1(0),t2:gan('po',0,p2(1),p2(2)),apaL1:l1(0),apaL2:'Gan. Playoff 1'},
+        {rKey:'cuartos',mi:0,t1:p1(0),t2:gan('po',0,'?','?'),apaL1:l1(0),apaL2:'PO1'},
         {rKey:'cuartos',mi:1,t1:p1(4),t2:p1(3),apaL1:l1(4),apaL2:l1(3)},
         {rKey:'cuartos',mi:2,t1:p1(2),t2:p2(4),apaL1:l1(2),apaL2:l2(4)},
-        {rKey:'cuartos',mi:3,t1:p1(1),t2:gan('po',1,p2(0),p2(3)),apaL1:l1(1),apaL2:'Gan. Playoff 2'},
+        {rKey:'cuartos',mi:3,t1:p1(1),t2:gan('po',1,'?','?'),apaL1:l1(1),apaL2:'PO2'},
       ]},
       {nombre:'SEMIFINAL',partidos:[
-        {rKey:'semi',mi:0,t1:gan('cuartos',0,p1(0),'?'),t2:gan('cuartos',1,p1(4),p1(3))},
-        {rKey:'semi',mi:1,t1:gan('cuartos',2,p1(2),p2(4)),t2:gan('cuartos',3,p1(1),'?')},
+        {rKey:'semi',mi:0,t1:gan('cuartos',0,p1(0),'?'),t2:gan('cuartos',1,'?','?')},
+        {rKey:'semi',mi:1,t1:gan('cuartos',2,'?','?'),t2:gan('cuartos',3,p1(1),'?')},
       ]},
       {nombre:'FINAL',partidos:[
         {rKey:'final',mi:0,t1:gan('semi',0,'?','?'),t2:gan('semi',1,'?','?')},
@@ -1893,10 +1897,10 @@ function getBracketRounds(cat, pos) {
         {rKey:'po',mi:3,t1:p2(4),t2:p2(3),apaL1:l2(4),apaL2:l2(3),nota:'Gan. vs 1° Zona B'},
       ]},
       {nombre:'CUARTOS DE FINAL',partidos:[
-        {rKey:'cuartos',mi:0,t1:p1(0),t2:gan('po',0,p2(5),p2(2)),apaL1:l1(0),apaL2:'Gan. Playoff 1'},
-        {rKey:'cuartos',mi:1,t1:gan('po',1,p1(4),p2(1)),t2:p1(3),apaL1:'Gan. Playoff 2',apaL2:l1(3)},
-        {rKey:'cuartos',mi:2,t1:p1(2),t2:gan('po',2,p2(0),p1(5)),apaL1:l1(2),apaL2:'Gan. Playoff 3'},
-        {rKey:'cuartos',mi:3,t1:gan('po',3,p2(4),p2(3)),t2:p1(1),apaL1:'Gan. Playoff 4',apaL2:l1(1)},
+        {rKey:'cuartos',mi:0,t1:p1(0),t2:gan('po',0,'?','?'),apaL1:l1(0),apaL2:'PO1'},
+        {rKey:'cuartos',mi:1,t1:gan('po',1,'?','?'),t2:p1(3),apaL1:'PO2',apaL2:l1(3)},
+        {rKey:'cuartos',mi:2,t1:p1(2),t2:gan('po',2,'?','?'),apaL1:l1(2),apaL2:'Gan. Playoff 3'},
+        {rKey:'cuartos',mi:3,t1:gan('po',3,'?','?'),t2:p1(1),apaL1:'Gan. Playoff 4',apaL2:l1(1)},
       ]},
       {nombre:'SEMIFINAL',partidos:[
         {rKey:'semi',mi:0,t1:gan('cuartos',0,p1(0),'?'),t2:gan('cuartos',1,'?',p1(3))},
@@ -1915,14 +1919,14 @@ function getBracketRounds(cat, pos) {
         {rKey:'po',mi:1,t1:p2(1),t2:p2(3),apaL1:l2(1),apaL2:l2(3)},
       ]},
       {nombre:'CUARTOS DE FINAL',partidos:[
-        {rKey:'cuartos',mi:0,t1:p1(0),t2:gan('po',0,p2(5),p2(6))},
+        {rKey:'cuartos',mi:0,t1:p1(0),t2:gan('po',0,'?','?')},
         {rKey:'cuartos',mi:1,t1:p1(4),t2:p2(2),apaL1:l1(4),apaL2:l2(2)},
-        {rKey:'cuartos',mi:2,t1:p1(2),t2:gan('po',1,p2(1),p2(3))},
+        {rKey:'cuartos',mi:2,t1:p1(2),t2:gan('po',1,'?','?')},
         {rKey:'cuartos',mi:3,t1:p1(6),t2:p2(4),apaL1:l1(6),apaL2:l2(4)},
       ]},
       {nombre:'SEMIFINAL',partidos:[
-        {rKey:'semi',mi:0,t1:gan('cuartos',0,p1(0),'?'),t2:gan('cuartos',1,p1(4),p2(2))},
-        {rKey:'semi',mi:1,t1:gan('cuartos',2,p1(2),'?'),t2:gan('cuartos',3,p1(6),p2(4))},
+        {rKey:'semi',mi:0,t1:gan('cuartos',0,p1(0),'?'),t2:gan('cuartos',1,'?','?')},
+        {rKey:'semi',mi:1,t1:gan('cuartos',2,p1(2),'?'),t2:gan('cuartos',3,'?','?')},
       ]},
       {nombre:'FINAL',partidos:[
         {rKey:'final',mi:0,t1:gan('semi',0,'?','?'),t2:gan('semi',1,'?','?')},
@@ -1945,10 +1949,10 @@ function getBracketRounds(cat, pos) {
         {rKey:oKey,mi:7,t1:p1(7),t2:p2(0),apaL1:l1(7),apaL2:l2(0)},
       ]},
       {nombre:'CUARTOS DE FINAL',partidos:[
-        {rKey:cKey,mi:0,t1:gan(oKey,0,p1(0),p2(7)),t2:gan(oKey,1,p1(2),p2(5))},
-        {rKey:cKey,mi:1,t1:gan(oKey,2,p1(4),p2(3)),t2:gan(oKey,3,p1(6),p2(1))},
-        {rKey:cKey,mi:2,t1:gan(oKey,4,p1(1),p2(6)),t2:gan(oKey,5,p1(3),p2(4))},
-        {rKey:cKey,mi:3,t1:gan(oKey,6,p1(5),p2(2)),t2:gan(oKey,7,p1(7),p2(0))},
+        {rKey:cKey,mi:0,t1:gan(oKey,0,'?','?'),t2:gan(oKey,1,'?','?')},
+        {rKey:cKey,mi:1,t1:gan(oKey,2,'?','?'),t2:gan(oKey,3,'?','?')},
+        {rKey:cKey,mi:2,t1:gan(oKey,4,'?','?'),t2:gan(oKey,5,'?','?')},
+        {rKey:cKey,mi:3,t1:gan(oKey,6,'?','?'),t2:gan(oKey,7,'?','?')},
       ]},
       {nombre:'SEMIFINAL',partidos:[
         {rKey:sKey,mi:0,t1:gan(cKey,0,'?','?'),t2:gan(cKey,1,'?','?')},
@@ -1972,20 +1976,20 @@ function getBracketRounds(cat, pos) {
         {rKey:poKey,mi:1,t1:p2(3),t2:p2(0),apaL1:l2(3),apaL2:l2(0),nota:'Gan. enfrenta 1° Zona B',feedsInto:7},
       ]},
       {nombre:'OCTAVOS DE FINAL',partidos:[
-        {rKey:oKey,mi:0,t1:p1(0),t2:gan(poKey,0,p2(1),p2(2)),apaL1:l1(0),apaL2:'Gan. Playoff 1'},
+        {rKey:oKey,mi:0,t1:p1(0),t2:gan(poKey,0,'?','?'),apaL1:l1(0),apaL2:'PO1'},
         {rKey:oKey,mi:1,t1:p1(8),t2:p1(7),apaL1:l1(8),apaL2:l1(7)},
         {rKey:oKey,mi:2,t1:p1(4),t2:p2(6),apaL1:l1(4),apaL2:l2(6)},
         {rKey:oKey,mi:3,t1:p2(5),t2:p1(3),apaL1:l2(5),apaL2:l1(3)},
         {rKey:oKey,mi:4,t1:p1(2),t2:p2(4),apaL1:l1(2),apaL2:l2(4)},
         {rKey:oKey,mi:5,t1:p2(7),t2:p1(5),apaL1:l2(7),apaL2:l1(5)},
         {rKey:oKey,mi:6,t1:p1(6),t2:p2(8),apaL1:l1(6),apaL2:l2(8)},
-        {rKey:oKey,mi:7,t1:gan(poKey,1,p2(3),p2(0)),t2:p1(1),apaL1:'Gan. Playoff 2',apaL2:l1(1)},
+        {rKey:oKey,mi:7,t1:gan(poKey,1,'?','?'),t2:p1(1),apaL1:'PO2',apaL2:l1(1)},
       ]},
       {nombre:'CUARTOS DE FINAL',partidos:[
-        {rKey:cKey,mi:0,t1:gan(oKey,0,p1(0),'?'),t2:gan(oKey,1,p1(8),p1(7))},
-        {rKey:cKey,mi:1,t1:gan(oKey,2,p1(4),p2(6)),t2:gan(oKey,3,p2(5),p1(3))},
-        {rKey:cKey,mi:2,t1:gan(oKey,4,p1(2),p2(4)),t2:gan(oKey,5,p2(7),p1(5))},
-        {rKey:cKey,mi:3,t1:gan(oKey,6,p1(6),p2(8)),t2:gan(oKey,7,'?',p1(1))},
+        {rKey:cKey,mi:0,t1:gan(oKey,0,p1(0),'?'),t2:gan(oKey,1,'?','?')},
+        {rKey:cKey,mi:1,t1:gan(oKey,2,'?','?'),t2:gan(oKey,3,'?','?')},
+        {rKey:cKey,mi:2,t1:gan(oKey,4,'?','?'),t2:gan(oKey,5,'?','?')},
+        {rKey:cKey,mi:3,t1:gan(oKey,6,'?','?'),t2:gan(oKey,7,'?',p1(1))},
       ]},
       {nombre:'SEMIFINAL',partidos:[
         {rKey:sKey,mi:0,t1:gan(cKey,0,'?','?'),t2:gan(cKey,1,'?','?')},
@@ -2079,7 +2083,20 @@ function renderFixture() {
     const zlbl = String.fromCharCode(65 + zi);
     const allCombos = combos(npp);
 
-    const rows = allCombos.map(([pa, pb]) => {
+    const sortCombos = [...allCombos].sort(([pa1,pb1],[pa2,pb2]) => {
+      const dayOrder = {jue:0,vie:1,sab:2,conf:9};
+      const r1 = cat.partidos[`${cat.id}-${zlbl}-${pa1}vs${pb1}`]||{};
+      const r2 = cat.partidos[`${cat.id}-${zlbl}-${pa2}vs${pb2}`]||{};
+      const h1 = (r1.hora||'').toLowerCase();
+      const h2 = (r2.hora||'').toLowerCase();
+      const d1k = Object.keys(dayOrder).find(d=>h1.startsWith(d))||'conf';
+      const d2k = Object.keys(dayOrder).find(d=>h2.startsWith(d))||'conf';
+      if(dayOrder[d1k]!==dayOrder[d2k]) return dayOrder[d1k]-dayOrder[d2k];
+      const t1=parseInt(h1.match(/\d+hs/)?.[0]||'99')||99;
+      const t2=parseInt(h2.match(/\d+hs/)?.[0]||'99')||99;
+      return t1-t2;
+    });
+    const rows = sortCombos.map(([pa, pb]) => {
       const pkey = `${cat.id}-${zlbl}-${pa}vs${pb}`;
       const res  = cat.partidos[pkey] || {};
       const nA   = cat.parejas[`${cat.id}-${zlbl}-${pa}`] || `P${pa}`;
@@ -2290,17 +2307,22 @@ function renderBracket() {
     if(m.winner===1 && m.t1) return m.t1;
     if(m.winner===2 && m.t2) return m.t2;
     // Si viene de un playoff sin jugar, mostrar "Gan. Playoff N"
-    if(rKey==='po') return `Gan. Playoff ${mi+1}`;
+    if(rKey==='po') return `PO${mi+1}`;
+    if(rKey==='octavos') return `OC${mi+1}`;
+    if(rKey==='cuartos') return `QF${mi+1}`;
+    if(rKey==='semi') return `S${mi+1}`;
     // Si viene de otra ronda sin jugar, usar fallback si es descriptivo
     if(fb1&&fb1!=='?') return fb1;
-    return `Gan. P.${mi+1}`;
+    return `P${mi+1}`;
   }
 
   // Render de un partido
   // apaLabel1/apaLabel2: etiqueta fija APA (ej: "1° Zona A") para mostrar siempre como subtítulo
   function mHTML(rKey,mi,t1,t2,apaLabel1,apaLabel2){
     const m=getM(rKey,mi);
-    const d1=m.t1||t1||'—', d2=m.t2||t2||'—';
+    // Solo mostrar nombre real si está guardado en el partido; si no, mostrar el apaLabel como nombre
+    const d1=m.t1||(apaLabel1||t1||'—');
+    const d2=m.t2||(apaLabel2||t2||'—');
     const done=m.winner!=null;
     const sc1=[m.s1a,m.s2a,m.s3a].filter(v=>v!==''&&v!=null).join('/');
     const sc2=[m.s1b,m.s2b,m.s3b].filter(v=>v!==''&&v!=null).join('/');
@@ -2342,8 +2364,8 @@ function renderBracket() {
         {rKey:'cuartos',mi:3,t1:p1(3),t2:p2(2),apaL1:l1(3),apaL2:l2(2)},
       ]},
       {nombre:'SEMIFINAL',partidos:[
-        {rKey:'semi',mi:0,t1:gan('cuartos',0,p1(0),p2(1)),t2:gan('cuartos',1,p1(2),p2(3))},
-        {rKey:'semi',mi:1,t1:gan('cuartos',2,p1(1),p2(0)),t2:gan('cuartos',3,p1(3),p2(2))},
+        {rKey:'semi',mi:0,t1:gan('cuartos',0,'?','?'),t2:gan('cuartos',1,'?','?')},
+        {rKey:'semi',mi:1,t1:gan('cuartos',2,'?','?'),t2:gan('cuartos',3,'?','?')},
       ]},
       {nombre:'FINAL',partidos:[
         {rKey:'final',mi:0,t1:gan('semi',0,'?','?'),t2:gan('semi',1,'?','?')},
@@ -2356,18 +2378,18 @@ function renderBracket() {
     // Por defecto: 2°A tiene bye, los otros 4 segundos hacen playoffs
     rounds=[
       {nombre:'PLAYOFFS',partidos:[
-        {rKey:'po',mi:0,t1:p2(1),t2:p2(2),apaL1:l2(1),apaL2:l2(2),nota:'Gan. enfrenta 1° Zona B',feedsInto:2},
-        {rKey:'po',mi:1,t1:p2(3),t2:p2(4),apaL1:l2(3),apaL2:l2(4),nota:'Gan. enfrenta 1° Zona A',feedsInto:0},
+        {rKey:'po',mi:0,t1:p2(0),t2:p2(2),apaL1:l2(0),apaL2:l2(2),nota:'Gan. enfrenta 1° Zona B'},
+        {rKey:'po',mi:1,t1:p2(1),t2:p2(3),apaL1:l2(1),apaL2:l2(3),nota:'Gan. enfrenta 1° Zona A'},
       ]},
       {nombre:'CUARTOS DE FINAL',partidos:[
-        {rKey:'cuartos',mi:0,t1:p1(0),t2:gan('po',1,p2(3),p2(4)),apaL1:l1(0),apaL2:'Gan. Playoff 2'},
-        {rKey:'cuartos',mi:1,t1:p2(1),t2:p1(2),apaL1:l2(1),apaL2:l1(2)},
-        {rKey:'cuartos',mi:2,t1:p1(1),t2:gan('po',0,p2(1),p2(2)),apaL1:l1(1),apaL2:'Gan. Playoff 1'},
-        {rKey:'cuartos',mi:3,t1:p1(3),t2:p1(4),apaL1:l1(3),apaL2:l1(4)},
+        {rKey:'cuartos',mi:0,t1:p1(1),t2:gan('po',0,'?','?'),apaL1:l1(1),apaL2:'PO1'},
+        {rKey:'cuartos',mi:1,t1:p1(0),t2:gan('po',1,'?','?'),apaL1:l1(0),apaL2:'PO2'},
+        {rKey:'cuartos',mi:2,t1:p1(2),t2:p1(4),apaL1:l1(2),apaL2:l1(4)},
+        {rKey:'cuartos',mi:3,t1:p1(3),t2:p2(4),apaL1:l1(3),apaL2:l2(4)},
       ]},
       {nombre:'SEMIFINAL',partidos:[
-        {rKey:'semi',mi:0,t1:gan('cuartos',0,p1(0),p2(0)),t2:gan('cuartos',1,p1(1),'?')},
-        {rKey:'semi',mi:1,t1:gan('cuartos',2,p1(2),'?'),t2:gan('cuartos',3,p1(3),p1(4))},
+        {rKey:'semi',mi:0,t1:gan('cuartos',0,'?','?'),t2:gan('cuartos',1,p1(1),'?')},
+        {rKey:'semi',mi:1,t1:gan('cuartos',2,p1(2),'?'),t2:gan('cuartos',3,'?','?')},
       ]},
       {nombre:'FINAL',partidos:[
         {rKey:'final',mi:0,t1:gan('semi',0,'?','?'),t2:gan('semi',1,'?','?')},
@@ -2382,7 +2404,7 @@ function renderBracket() {
         {rKey:'semi',mi:1,t1:p2(0),t2:p1(1),apaL1:l2(0),apaL2:l1(1)},
       ]},
       {nombre:'FINAL',partidos:[
-        {rKey:'final',mi:0,t1:gan('semi',0,p1(0),p2(1)),t2:gan('semi',1,p2(0),p1(1))},
+        {rKey:'final',mi:0,t1:gan('semi',0,'?','?'),t2:gan('semi',1,'?','?')},
       ]},
     ];
   }
@@ -2396,8 +2418,8 @@ function renderBracket() {
         {rKey:'po',mi:1,t1:p1(2),t2:p2(0),apaL1:l1(2),apaL2:l2(0),nota:'Gan. enfrenta 1° Zona B',feedsInto:1},
       ]},
       {nombre:'SEMIFINAL',partidos:[
-        {rKey:'semi',mi:0,t1:p1(0),t2:gan('po',0,p2(1),p2(2)),apaL1:l1(0),apaL2:'Gan. Playoff 1'},
-        {rKey:'semi',mi:1,t1:p1(1),t2:gan('po',1,p1(2),p2(0)),apaL1:l1(1),apaL2:'Gan. Playoff 2'},
+        {rKey:'semi',mi:0,t1:p1(0),t2:gan('po',0,'?','?'),apaL1:l1(0),apaL2:'PO1'},
+        {rKey:'semi',mi:1,t1:p1(1),t2:gan('po',1,'?','?'),apaL1:l1(1),apaL2:'PO2'},
       ]},
       {nombre:'FINAL',partidos:[
         {rKey:'final',mi:0,t1:gan('semi',0,'?','?'),t2:gan('semi',1,'?','?')},
@@ -2414,8 +2436,8 @@ function renderBracket() {
         {rKey:'cuartos',mi:3,t1:p1(1),t2:p2(0),apaL1:l1(1),apaL2:l2(0)},
       ]},
       {nombre:'SEMIFINAL',partidos:[
-        {rKey:'semi',mi:0,t1:gan('cuartos',0,p1(0),p3(1)),t2:gan('cuartos',1,p2(1),p2(2))},
-        {rKey:'semi',mi:1,t1:gan('cuartos',2,p1(2),p3(0)),t2:gan('cuartos',3,p1(1),p2(0))},
+        {rKey:'semi',mi:0,t1:gan('cuartos',0,'?','?'),t2:gan('cuartos',1,'?','?')},
+        {rKey:'semi',mi:1,t1:gan('cuartos',2,'?','?'),t2:gan('cuartos',3,'?','?')},
       ]},
       {nombre:'FINAL',partidos:[
         {rKey:'final',mi:0,t1:gan('semi',0,'?','?'),t2:gan('semi',1,'?','?')},
@@ -2433,8 +2455,8 @@ function renderBracket() {
         {rKey:'cuartos',mi:3,t1:p2(3),t2:p1(1),apaL1:l2(3),apaL2:l1(1)},
       ]},
       {nombre:'SEMIFINAL',partidos:[
-        {rKey:'semi',mi:0,t1:gan('cuartos',0,p1(0),p2(2)),t2:gan('cuartos',1,p2(1),p1(3))},
-        {rKey:'semi',mi:1,t1:gan('cuartos',2,p1(2),p2(0)),t2:gan('cuartos',3,p2(3),p1(1))},
+        {rKey:'semi',mi:0,t1:gan('cuartos',0,'?','?'),t2:gan('cuartos',1,'?','?')},
+        {rKey:'semi',mi:1,t1:gan('cuartos',2,'?','?'),t2:gan('cuartos',3,'?','?')},
       ]},
       {nombre:'FINAL',partidos:[
         {rKey:'final',mi:0,t1:gan('semi',0,'?','?'),t2:gan('semi',1,'?','?')},
@@ -2451,14 +2473,14 @@ function renderBracket() {
         {rKey:'po',mi:1,t1:p2(0),t2:p2(3),apaL1:l2(0),apaL2:l2(3)},
       ]},
       {nombre:'CUARTOS DE FINAL',partidos:[
-        {rKey:'cuartos',mi:0,t1:p1(0),t2:gan('po',0,p2(1),p2(2)),apaL1:l1(0),apaL2:'Gan. Playoff 1'},
+        {rKey:'cuartos',mi:0,t1:p1(0),t2:gan('po',0,'?','?'),apaL1:l1(0),apaL2:'PO1'},
         {rKey:'cuartos',mi:1,t1:p1(4),t2:p1(3),apaL1:l1(4),apaL2:l1(3)},
         {rKey:'cuartos',mi:2,t1:p1(2),t2:p2(4),apaL1:l1(2),apaL2:l2(4)},
-        {rKey:'cuartos',mi:3,t1:p1(1),t2:gan('po',1,p2(0),p2(3)),apaL1:l1(1),apaL2:'Gan. Playoff 2'},
+        {rKey:'cuartos',mi:3,t1:p1(1),t2:gan('po',1,'?','?'),apaL1:l1(1),apaL2:'PO2'},
       ]},
       {nombre:'SEMIFINAL',partidos:[
-        {rKey:'semi',mi:0,t1:gan('cuartos',0,p1(0),'?'),t2:gan('cuartos',1,p1(4),p1(3))},
-        {rKey:'semi',mi:1,t1:gan('cuartos',2,p1(2),p2(4)),t2:gan('cuartos',3,p1(1),'?')},
+        {rKey:'semi',mi:0,t1:gan('cuartos',0,p1(0),'?'),t2:gan('cuartos',1,'?','?')},
+        {rKey:'semi',mi:1,t1:gan('cuartos',2,'?','?'),t2:gan('cuartos',3,p1(1),'?')},
       ]},
       {nombre:'FINAL',partidos:[
         {rKey:'final',mi:0,t1:gan('semi',0,'?','?'),t2:gan('semi',1,'?','?')},
@@ -2479,10 +2501,10 @@ function renderBracket() {
         {rKey:'po',mi:3,t1:p2(4),t2:p2(3),apaL1:l2(4),apaL2:l2(3),nota:'Gan. vs 1° Zona B'},
       ]},
       {nombre:'CUARTOS DE FINAL',partidos:[
-        {rKey:'cuartos',mi:0,t1:p1(0),t2:gan('po',0,p2(5),p2(2)),apaL1:l1(0),apaL2:'Gan. Playoff 1'},
-        {rKey:'cuartos',mi:1,t1:gan('po',1,p1(4),p2(1)),t2:p1(3),apaL1:'Gan. Playoff 2',apaL2:l1(3)},
-        {rKey:'cuartos',mi:2,t1:p1(2),t2:gan('po',2,p2(0),p1(5)),apaL1:l1(2),apaL2:'Gan. Playoff 3'},
-        {rKey:'cuartos',mi:3,t1:gan('po',3,p2(4),p2(3)),t2:p1(1),apaL1:'Gan. Playoff 4',apaL2:l1(1)},
+        {rKey:'cuartos',mi:0,t1:p1(0),t2:gan('po',0,'?','?'),apaL1:l1(0),apaL2:'PO1'},
+        {rKey:'cuartos',mi:1,t1:gan('po',1,'?','?'),t2:p1(3),apaL1:'PO2',apaL2:l1(3)},
+        {rKey:'cuartos',mi:2,t1:p1(2),t2:gan('po',2,'?','?'),apaL1:l1(2),apaL2:'Gan. Playoff 3'},
+        {rKey:'cuartos',mi:3,t1:gan('po',3,'?','?'),t2:p1(1),apaL1:'Gan. Playoff 4',apaL2:l1(1)},
       ]},
       {nombre:'SEMIFINAL',partidos:[
         {rKey:'semi',mi:0,t1:gan('cuartos',0,p1(0),'?'),t2:gan('cuartos',1,'?',p1(3))},
@@ -2501,14 +2523,14 @@ function renderBracket() {
         {rKey:'po',mi:1,t1:p2(1),t2:p2(3),apaL1:l2(1),apaL2:l2(3)},
       ]},
       {nombre:'CUARTOS DE FINAL',partidos:[
-        {rKey:'cuartos',mi:0,t1:p1(0),t2:gan('po',0,p2(5),p2(6))},
+        {rKey:'cuartos',mi:0,t1:p1(0),t2:gan('po',0,'?','?')},
         {rKey:'cuartos',mi:1,t1:p1(4),t2:p2(2),apaL1:l1(4),apaL2:l2(2)},
-        {rKey:'cuartos',mi:2,t1:p1(2),t2:gan('po',1,p2(1),p2(3))},
+        {rKey:'cuartos',mi:2,t1:p1(2),t2:gan('po',1,'?','?')},
         {rKey:'cuartos',mi:3,t1:p1(6),t2:p2(4),apaL1:l1(6),apaL2:l2(4)},
       ]},
       {nombre:'SEMIFINAL',partidos:[
-        {rKey:'semi',mi:0,t1:gan('cuartos',0,p1(0),'?'),t2:gan('cuartos',1,p1(4),p2(2))},
-        {rKey:'semi',mi:1,t1:gan('cuartos',2,p1(2),'?'),t2:gan('cuartos',3,p1(6),p2(4))},
+        {rKey:'semi',mi:0,t1:gan('cuartos',0,p1(0),'?'),t2:gan('cuartos',1,'?','?')},
+        {rKey:'semi',mi:1,t1:gan('cuartos',2,p1(2),'?'),t2:gan('cuartos',3,'?','?')},
       ]},
       {nombre:'FINAL',partidos:[
         {rKey:'final',mi:0,t1:gan('semi',0,'?','?'),t2:gan('semi',1,'?','?')},
@@ -2531,10 +2553,10 @@ function renderBracket() {
         {rKey:oKey,mi:7,t1:p1(7),t2:p2(0),apaL1:l1(7),apaL2:l2(0)},
       ]},
       {nombre:'CUARTOS DE FINAL',partidos:[
-        {rKey:cKey,mi:0,t1:gan(oKey,0,p1(0),p2(7)),t2:gan(oKey,1,p1(2),p2(5))},
-        {rKey:cKey,mi:1,t1:gan(oKey,2,p1(4),p2(3)),t2:gan(oKey,3,p1(6),p2(1))},
-        {rKey:cKey,mi:2,t1:gan(oKey,4,p1(1),p2(6)),t2:gan(oKey,5,p1(3),p2(4))},
-        {rKey:cKey,mi:3,t1:gan(oKey,6,p1(5),p2(2)),t2:gan(oKey,7,p1(7),p2(0))},
+        {rKey:cKey,mi:0,t1:gan(oKey,0,'?','?'),t2:gan(oKey,1,'?','?')},
+        {rKey:cKey,mi:1,t1:gan(oKey,2,'?','?'),t2:gan(oKey,3,'?','?')},
+        {rKey:cKey,mi:2,t1:gan(oKey,4,'?','?'),t2:gan(oKey,5,'?','?')},
+        {rKey:cKey,mi:3,t1:gan(oKey,6,'?','?'),t2:gan(oKey,7,'?','?')},
       ]},
       {nombre:'SEMIFINAL',partidos:[
         {rKey:sKey,mi:0,t1:gan(cKey,0,'?','?'),t2:gan(cKey,1,'?','?')},
@@ -2558,20 +2580,20 @@ function renderBracket() {
         {rKey:poKey,mi:1,t1:p2(3),t2:p2(0),apaL1:l2(3),apaL2:l2(0),nota:'Gan. enfrenta 1° Zona B',feedsInto:7},
       ]},
       {nombre:'OCTAVOS DE FINAL',partidos:[
-        {rKey:oKey,mi:0,t1:p1(0),t2:gan(poKey,0,p2(1),p2(2)),apaL1:l1(0),apaL2:'Gan. Playoff 1'},
+        {rKey:oKey,mi:0,t1:p1(0),t2:gan(poKey,0,'?','?'),apaL1:l1(0),apaL2:'PO1'},
         {rKey:oKey,mi:1,t1:p1(8),t2:p1(7),apaL1:l1(8),apaL2:l1(7)},
         {rKey:oKey,mi:2,t1:p1(4),t2:p2(6),apaL1:l1(4),apaL2:l2(6)},
         {rKey:oKey,mi:3,t1:p2(5),t2:p1(3),apaL1:l2(5),apaL2:l1(3)},
         {rKey:oKey,mi:4,t1:p1(2),t2:p2(4),apaL1:l1(2),apaL2:l2(4)},
         {rKey:oKey,mi:5,t1:p2(7),t2:p1(5),apaL1:l2(7),apaL2:l1(5)},
         {rKey:oKey,mi:6,t1:p1(6),t2:p2(8),apaL1:l1(6),apaL2:l2(8)},
-        {rKey:oKey,mi:7,t1:gan(poKey,1,p2(3),p2(0)),t2:p1(1),apaL1:'Gan. Playoff 2',apaL2:l1(1)},
+        {rKey:oKey,mi:7,t1:gan(poKey,1,'?','?'),t2:p1(1),apaL1:'PO2',apaL2:l1(1)},
       ]},
       {nombre:'CUARTOS DE FINAL',partidos:[
-        {rKey:cKey,mi:0,t1:gan(oKey,0,p1(0),'?'),t2:gan(oKey,1,p1(8),p1(7))},
-        {rKey:cKey,mi:1,t1:gan(oKey,2,p1(4),p2(6)),t2:gan(oKey,3,p2(5),p1(3))},
-        {rKey:cKey,mi:2,t1:gan(oKey,4,p1(2),p2(4)),t2:gan(oKey,5,p2(7),p1(5))},
-        {rKey:cKey,mi:3,t1:gan(oKey,6,p1(6),p2(8)),t2:gan(oKey,7,'?',p1(1))},
+        {rKey:cKey,mi:0,t1:gan(oKey,0,p1(0),'?'),t2:gan(oKey,1,'?','?')},
+        {rKey:cKey,mi:1,t1:gan(oKey,2,'?','?'),t2:gan(oKey,3,'?','?')},
+        {rKey:cKey,mi:2,t1:gan(oKey,4,'?','?'),t2:gan(oKey,5,'?','?')},
+        {rKey:cKey,mi:3,t1:gan(oKey,6,'?','?'),t2:gan(oKey,7,'?',p1(1))},
       ]},
       {nombre:'SEMIFINAL',partidos:[
         {rKey:sKey,mi:0,t1:gan(cKey,0,'?','?'),t2:gan(cKey,1,'?','?')},
@@ -2712,8 +2734,8 @@ function renderBracket() {
       const apaL1 = p.apaL1||'';
       const apaL2 = p.apaL2||'';
       const m = getM(p.rKey, p.mi);
-      const d1 = m.t1||p.t1||'—';
-      const d2 = m.t2||p.t2||'—';
+      const d1 = m.t1||(apaL1||p.t1||'—');
+      const d2 = m.t2||(apaL2||p.t2||'—');
       const done = m.winner!=null;
       const sc1 = [m.s1a,m.s2a,m.s3a].filter(v=>v!==''&&v!=null).join('/');
       const sc2 = [m.s1b,m.s2b,m.s3b].filter(v=>v!==''&&v!=null).join('/');
