@@ -1733,10 +1733,9 @@ function getBracketRounds(cat, pos) {
   }
   function gan(rKey,mi,fb1,fb2){
     const m=getM(rKey,mi);
-    if(m.winner===1) return m.t1||fb1;
-    if(m.winner===2) return m.t2||fb2;
+    if(m.winner===1 && m.t1) return m.t1;
+    if(m.winner===2 && m.t2) return m.t2;
     if(rKey==='po') return `Gan. Playoff ${mi+1}`;
-    if(fb1&&fb1!=='?') return fb1;
     return `Gan. P.${mi+1}`;
   }
   const todasZonasDe2 = cat.dist.every(npp=>npp===2);
@@ -2093,14 +2092,13 @@ function renderFixture() {
     const allDone = allCombos.every(([pa,pb]) => getWinner(cat.partidos[`${cat.id}-${zlbl}-${pa}vs${pb}`]||{}) !== null);
     const posHtml = allDone && tbl.length ? `
       <div style="border-top:2px solid ${cat.color}30;background:#f9fafb;padding:6px 0">
-        ${tbl.map((r,i) => {
-          const icons = ['🥇','🥈','🥉'];
-          const clasif = i < npp - 1;
+        ${tbl.filter((_,i) => i < 2).map((r,i) => {
+          const icons = ['🥇','🥈'];
           return `<div style="display:flex;align-items:center;gap:8px;padding:4px 12px">
             <span style="font-size:12px;min-width:20px">${icons[i]||`${i+1}°`}</span>
-            <span style="flex:1;font-size:12px;font-weight:${i===0?700:500};color:${clasif?'#111827':'#9ca3af'};overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${r.nombre}</span>
+            <span style="flex:1;font-size:12px;font-weight:${i===0?700:500};color:#111827;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${r.nombre}</span>
             <span style="font-family:'Barlow Condensed';font-size:13px;font-weight:800;color:${cat.color}">${r.pts}p</span>
-            <span style="font-size:10px;font-weight:700;color:${clasif?cat.color:'#ef4444'}">${clasif?'✓ CLASIF':'✗'}</span>
+            <span style="font-size:10px;font-weight:700;color:${cat.color}">✓ CLASIF</span>
           </div>`;
         }).join('')}
       </div>` : '';
@@ -2289,8 +2287,8 @@ function renderBracket() {
   // Resolver ganador de partido previo
   function gan(rKey,mi,fb1,fb2){
     const m=getM(rKey,mi);
-    if(m.winner===1) return m.t1||fb1;
-    if(m.winner===2) return m.t2||fb2;
+    if(m.winner===1 && m.t1) return m.t1;
+    if(m.winner===2 && m.t2) return m.t2;
     // Si viene de un playoff sin jugar, mostrar "Gan. Playoff N"
     if(rKey==='po') return `Gan. Playoff ${mi+1}`;
     // Si viene de otra ronda sin jugar, usar fallback si es descriptivo
