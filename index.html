@@ -1548,7 +1548,95 @@ function renderCarga() {
         <div>${partidos}</div>
       </div>
     </div>`;
+  }).join('') + renderCargaEliminatoria(cat);
+}
+
+function renderCargaEliminatoria(cat) {
+  if(!cat?.dist) return '';
+  const pos = calcPos(cat);
+  let rounds = [];
+  try { rounds = getBracketRounds(cat, pos); } catch(e) { return ''; }
+  if(!rounds.length) return '';
+
+  const rondaColors = {
+    'PLAYOFFS':'#b45309','OCTAVOS DE FINAL':'#065f46',
+    'CUARTOS DE FINAL':'#784212','SEMIFINAL':'#4C1D95','FINAL':'#7f1d1d'
+  };
+
+  const rondaCards = rounds.map(ronda => {
+    const color = rondaColors[ronda.nombre] || '#1e3a5f';
+
+    const filas = ronda.partidos.map((p, pi) => {
+      const bkey = `${cat.id}-${p.rKey}-${p.mi}`;
+      const m = cat.bracket[bkey] || {};
+      const _isGeneric = s => !s || /^(Gan\.|2°|3°|GanPO|PO|QF|OC|S\d|\?)/.test(s.trim());
+      const nA = (!_isGeneric(m.t1)) ? m.t1 : (p.t1 || p.apaL1 || '—');
+      const nB = (!_isGeneric(m.t2)) ? m.t2 : (p.t2 || p.apaL2 || '—');
+      const w = getWinner(m);
+      const wName = w===1?nA:w===2?nB:null;
+      const label = p.nota ? `<span style="font-size:10px;color:#f59e0b">⭐ ${p.nota}</span>` : `<span style="font-size:11px;color:${color};font-weight:800">${ronda.nombre.split(' ')[0]} ${pi+1}</span>`;
+
+      return `<div style="background:#fff;border:1.5px solid ${w?color+'66':'#e5e7eb'};border-radius:12px;margin-bottom:10px;overflow:hidden">
+        <div style="display:flex;align-items:center;gap:10px;padding:8px 14px;background:${w?color+'0d':'#f9fafb'};border-bottom:1px solid #e5e7eb;flex-wrap:wrap">
+          ${label}
+          <div style="display:flex;align-items:center;gap:6px;flex:1">
+            <span style="font-size:11px;color:#6b7280">🎾 Cancha</span>
+            <input type="text" value="${m.cancha||''}" placeholder="—"
+              style="width:60px;padding:3px 7px;border:1px solid #d1d5db;border-radius:6px;font-size:13px;font-weight:600;text-align:center"
+              onchange="updBracket(${cat.id},'${p.rKey}',${p.mi},'cancha',this.value,'${escHtmlCarga(nA)}','${escHtmlCarga(nB)}')">
+            <span style="font-size:11px;color:#6b7280;margin-left:6px">🕐 Hora</span>
+            <input type="text" value="${m.hora||''}" placeholder="—"
+              style="width:80px;padding:3px 7px;border:1px solid #d1d5db;border-radius:6px;font-size:13px;font-weight:600;text-align:center"
+              onchange="updBracket(${cat.id},'${p.rKey}',${p.mi},'hora',this.value,'${escHtmlCarga(nA)}','${escHtmlCarga(nB)}')">
+          </div>
+          ${wName?`<span style="font-family:'Barlow Condensed';font-size:13px;font-weight:800;color:${color};background:${color}1a;padding:3px 10px;border-radius:20px">✓ ${wName}</span>`:''}
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;padding:12px 14px;flex-wrap:wrap">
+          <div style="flex:1;min-width:120px;text-align:right">
+            <div style="font-weight:${w===1?800:600};font-size:15px;color:${w===1?color:'var(--text)'}">${nA}</div>
+            <div style="display:flex;align-items:center;gap:4px;justify-content:flex-end;margin-top:6px">
+              <input class="score-inp" type="number" min="0" max="99" value="${m.s1a??''}" placeholder="S1"
+                onchange="updBracket(${cat.id},'${p.rKey}',${p.mi},'s1a',this.value,'${escHtmlCarga(nA)}','${escHtmlCarga(nB)}')">
+              <span style="color:#9ca3af">/</span>
+              <input class="score-inp" type="number" min="0" max="99" value="${m.s2a??''}" placeholder="S2"
+                onchange="updBracket(${cat.id},'${p.rKey}',${p.mi},'s2a',this.value,'${escHtmlCarga(nA)}','${escHtmlCarga(nB)}')">
+              <span style="color:#9ca3af">/</span>
+              <input class="score-inp" type="number" min="0" max="99" value="${m.s3a??''}" placeholder="TB" style="color:var(--text2)"
+                onchange="updBracket(${cat.id},'${p.rKey}',${p.mi},'s3a',this.value,'${escHtmlCarga(nA)}','${escHtmlCarga(nB)}')">
+            </div>
+          </div>
+          <div style="font-family:'Barlow Condensed';font-size:20px;font-weight:900;color:#005dd0;padding:0 4px">VS</div>
+          <div style="flex:1;min-width:120px">
+            <div style="font-weight:${w===2?800:600};font-size:15px;color:${w===2?color:'var(--text)'}">${nB}</div>
+            <div style="display:flex;align-items:center;gap:4px;margin-top:6px">
+              <input class="score-inp" type="number" min="0" max="99" value="${m.s1b??''}" placeholder="S1"
+                onchange="updBracket(${cat.id},'${p.rKey}',${p.mi},'s1b',this.value,'${escHtmlCarga(nA)}','${escHtmlCarga(nB)}')">
+              <span style="color:#9ca3af">/</span>
+              <input class="score-inp" type="number" min="0" max="99" value="${m.s2b??''}" placeholder="S2"
+                onchange="updBracket(${cat.id},'${p.rKey}',${p.mi},'s2b',this.value,'${escHtmlCarga(nA)}','${escHtmlCarga(nB)}')">
+              <span style="color:#9ca3af">/</span>
+              <input class="score-inp" type="number" min="0" max="99" value="${m.s3b??''}" placeholder="TB" style="color:var(--text2)"
+                onchange="updBracket(${cat.id},'${p.rKey}',${p.mi},'s3b',this.value,'${escHtmlCarga(nA)}','${escHtmlCarga(nB)}')">
+            </div>
+          </div>
+        </div>
+      </div>`;
+    }).join('');
+
+    return `<div style="background:#fff;border:1.5px solid ${color}44;border-radius:14px;overflow:hidden;margin-bottom:16px">
+      <div style="padding:10px 16px;background:${color};display:flex;align-items:center;gap:8px">
+        <span style="font-family:'Barlow Condensed';font-size:15px;font-weight:900;color:#fff;letter-spacing:2px">${ronda.nombre}</span>
+      </div>
+      <div style="padding:14px">${filas}</div>
+    </div>`;
   }).join('');
+
+  return `<div style="margin-top:28px">
+    <div style="font-family:'Barlow Condensed';font-size:13px;font-weight:800;letter-spacing:2px;color:#1e293b;padding:8px 0 12px;border-bottom:2px solid #1e293b;margin-bottom:16px">
+      🏆 FASE ELIMINATORIA
+    </div>
+    ${rondaCards}
+  </div>`;
 }
 
 function sortearZonas(catId) {
@@ -1590,6 +1678,43 @@ function updScore(catId,zlbl,pa,pb,field,val) {
   const strFields = ['cancha','hora'];
   cat.partidos[pkey][field] = strFields.includes(field) ? val : (val===''?'':parseInt(val));
   renderCarga();
+  renderFixture();
+  if(window.fbSave) fbSave();
+}
+
+function escHtmlCarga(s){ return (s||'').replace(/'/g,"\\'").replace(/"/g,'&quot;'); }
+
+function updBracket(catId, rKey, mi, field, val, t1, t2) {
+  if(!IS_ADMIN) return;
+  const cat = S.cats.find(c=>c.id===catId);
+  const bkey = `${catId}-${rKey}-${mi}`;
+  if(!cat.bracket[bkey]) cat.bracket[bkey] = {s1a:'',s2a:'',s3a:'',s1b:'',s2b:'',s3b:'',winner:null};
+  const m = cat.bracket[bkey];
+  // Preservar nombres reales si los tenemos
+  if(t1 && !/^(Gan\.|2°|3°|GanPO|PO|QF|OC|S\d|\?)/.test(t1.trim())) m.t1 = t1;
+  if(t2 && !/^(Gan\.|2°|3°|GanPO|PO|QF|OC|S\d|\?)/.test(t2.trim())) m.t2 = t2;
+  const strFields = ['cancha','hora'];
+  m[field] = strFields.includes(field) ? val : (val===''?'':parseInt(val));
+  // Recalcular winner
+  const hasScores = m.s1a!==''&&m.s1a!=null || m.s1b!==''&&m.s1b!=null;
+  if(hasScores) {
+    let wA=0,wB=0;
+    const a1=parseInt(m.s1a)||0,b1=parseInt(m.s1b)||0;
+    const a2=parseInt(m.s2a)||0,b2=parseInt(m.s2b)||0;
+    const a3=parseInt(m.s3a)||0,b3=parseInt(m.s3b)||0;
+    if(a1!==b1){if(a1>b1)wA++;else wB++;}
+    if((m.s2a!==''&&m.s2a!=null)||(m.s2b!==''&&m.s2b!=null)){if(a2!==b2){if(a2>b2)wA++;else wB++;}}
+    if((m.s3a!==''&&m.s3a!=null)||(m.s3b!==''&&m.s3b!=null)){if(a3!==b3){if(a3>b3)wA++;else wB++;}}
+    m.winner = wA>wB?1:wB>wA?2:null;
+  } else {
+    m.winner = null;
+  }
+  // Si es la final, actualizar campeón
+  if(bkey===`${catId}-final-0` && m.winner) {
+    cat.bracket['champion'] = m.winner===1?m.t1:m.t2;
+  }
+  renderCarga();
+  renderBracket();
   renderFixture();
   if(window.fbSave) fbSave();
 }
