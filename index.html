@@ -1598,7 +1598,14 @@ function updScore(catId,zlbl,pa,pb,field,val) {
 // GAME LOGIC
 // ══════════════════════════════════════════════════════════════
 function getWinner(res) {
-  if(!res||(res.s1a===''||res.s1a==null)&&(res.s1b===''||res.s1b==null)) return null;
+  if(!res) return null;
+  // Si winner fue guardado explícitamente (no null), respetarlo
+  if(res.winner===1||res.winner===2) return res.winner;
+  // Sin scores = sin resultado
+  if((res.s1a===''||res.s1a==null)&&(res.s1b===''||res.s1b==null)) return null;
+  // Si ambos son 0 (puede ser campo vacío guardado como 0 por bug previo) = sin resultado
+  if((parseInt(res.s1a)||0)===0&&(parseInt(res.s1b)||0)===0&&
+     (parseInt(res.s2a)||0)===0&&(parseInt(res.s2b)||0)===0) return null;
   let wA=0,wB=0;
   const a1=parseInt(res.s1a)||0,b1=parseInt(res.s1b)||0;
   const a2=parseInt(res.s2a)||0,b2=parseInt(res.s2b)||0;
@@ -2069,7 +2076,7 @@ function renderFixture() {
         <span style="flex:1;font-size:13px;font-weight:${w===1?700:500};color:${w===1?color:'#111827'};overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${nA}</span>
         <div style="text-align:center;min-width:52px">
           ${w
-            ? `<span style="font-family:'Barlow Condensed';font-size:16px;font-weight:900;color:${color}">${res.s1a||0}–${res.s1b||0}</span>`
+            ? `<span style="font-family:'Barlow Condensed';font-size:15px;font-weight:900;color:${color}">${res.s1a||0}–${res.s1b||0}${(res.s2a!==''&&res.s2a!=null)||(res.s2b!==''&&res.s2b!=null)?` / ${res.s2a||0}–${res.s2b||0}`:''}${(res.s3a!==''&&res.s3a!=null)||(res.s3b!==''&&res.s3b!=null)?` / ${res.s3a||0}–${res.s3b||0}`:''}</span>`
             : `<span style="font-family:'Barlow Condensed';font-size:13px;font-weight:900;color:#005dd0">VS</span>`
           }
         </div>
@@ -2855,16 +2862,19 @@ function clearResult(){
 function saveResult(){
   if(!rCtx) return;
   const cat=S.cats.find(c=>c.id===rCtx.catId);
-  const s1a=parseInt(document.getElementById('rs1a').value)||0;
-  const s2a=parseInt(document.getElementById('rs2a').value)||0;
-  const s3a=parseInt(document.getElementById('rs3a').value)||0;
-  const s1b=parseInt(document.getElementById('rs1b').value)||0;
-  const s2b=parseInt(document.getElementById('rs2b').value)||0;
-  const s3b=parseInt(document.getElementById('rs3b').value)||0;
+  const _sv = id => { const v=document.getElementById(id).value; return v===''?'':parseInt(v)||0; };
+  const s1a=_sv('rs1a'),s2a=_sv('rs2a'),s3a=_sv('rs3a');
+  const s1b=_sv('rs1b'),s2b=_sv('rs2b'),s3b=_sv('rs3b');
   let wA=0,wB=0;
-  if(s1a!==s1b){if(s1a>s1b)wA++;else wB++;}
-  if(s2a!==s2b){if(s2a>s2b)wA++;else wB++;}
-  if(s3a!==s3b){if(s3a>s3b)wA++;else wB++;}
+  const hasScores = s1a!==''||s1b!=='';
+  if(hasScores){
+    const a1=parseInt(s1a)||0,b1=parseInt(s1b)||0;
+    const a2=parseInt(s2a)||0,b2=parseInt(s2b)||0;
+    const a3=parseInt(s3a)||0,b3=parseInt(s3b)||0;
+    if(a1!==b1){if(a1>b1)wA++;else wB++;}
+    if((s2a!==''&&s2a!=null)||(s2b!==''&&s2b!=null)){if(a2!==b2){if(a2>b2)wA++;else wB++;}}
+    if((s3a!==''&&s3a!=null)||(s3b!==''&&s3b!=null)){if(a3!==b3){if(a3>b3)wA++;else wB++;}}
+  }
   const winner=wA>wB?1:wB>wA?2:null;
   const cancha = document.getElementById('rm-cancha').value.trim();
   const hora   = document.getElementById('rm-hora').value.trim();
