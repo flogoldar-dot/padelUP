@@ -1778,17 +1778,18 @@ function getBracketRounds(cat, pos) {
   else if(todasZonasDe2 && nz===5) {
     // 10 parejas, 5 zonas de 2
     // PO1: 2°A vs 2°C | PO2: 2°D vs 2°E
-    // QF1: 2°B vs 1°C | QF2: 1°A vs GanPO2 | QF3: 1°D vs 1°E | QF4: 1°B vs GanPO1
+    // CF1: 2°B vs 1°C | CF2: 1°A vs GanPO2 | CF3: 1°D vs 1°E | CF4: 1°B vs GanPO1
+    // Semi1: CF1 vs CF2 | Semi2: CF3 vs CF4
     rounds=[
       {nombre:'PLAYOFFS',partidos:[
-        {rKey:'po',mi:0,t1:p2(0),t2:p2(2),apaL1:l2(0),apaL2:l2(2)},
-        {rKey:'po',mi:1,t1:p2(3),t2:p2(4),apaL1:l2(3),apaL2:l2(4)},
+        {rKey:'po',mi:0,t1:p2(0),t2:p2(2),apaL1:l2(0),apaL2:l2(2),nota:'Gan. enfrenta 1° Zona B',feedsInto:3},
+        {rKey:'po',mi:1,t1:p2(3),t2:p2(4),apaL1:l2(3),apaL2:l2(4),nota:'Gan. enfrenta 1° Zona A',feedsInto:1},
       ]},
       {nombre:'CUARTOS DE FINAL',partidos:[
         {rKey:'cuartos',mi:0,t1:p2(1),t2:p1(2),apaL1:l2(1),apaL2:l1(2)},
-        {rKey:'cuartos',mi:1,t1:p1(0),t2:gan('po',1,'?','?'),apaL1:l1(0),apaL2:'PO2'},
+        {rKey:'cuartos',mi:1,t1:p1(0),t2:gan('po',1,'?','?'),apaL1:l1(0),apaL2:'GanPO2'},
         {rKey:'cuartos',mi:2,t1:p1(3),t2:p1(4),apaL1:l1(3),apaL2:l1(4)},
-        {rKey:'cuartos',mi:3,t1:p1(1),t2:gan('po',0,'?','?'),apaL1:l1(1),apaL2:'PO1'},
+        {rKey:'cuartos',mi:3,t1:p1(1),t2:gan('po',0,'?','?'),apaL1:l1(1),apaL2:'GanPO1'},
       ]},
       {nombre:'SEMIFINAL',partidos:[
         {rKey:'semi',mi:0,t1:gan('cuartos',0,'?','?'),t2:gan('cuartos',1,'?','?')},
@@ -2380,23 +2381,24 @@ function renderBracket() {
     ];
   }
   else if(todasZonasDe2 && nz===5) {
-    // 10 parejas, 5 zonas de 2 → todos pasan pero son 10, necesitamos playoff para llegar a 8
-    // 5 primeros directos a cuartos, 5 segundos: 4 juegan playoff, 1 tiene bye (lo elegís vos)
-    // Por defecto: 2°A tiene bye, los otros 4 segundos hacen playoffs
+    // 10 parejas, 5 zonas de 2
+    // PO1: 2°A vs 2°C | PO2: 2°D vs 2°E
+    // CF1: 2°B vs 1°C | CF2: 1°A vs GanPO2 | CF3: 1°D vs 1°E | CF4: 1°B vs GanPO1
+    // Semi1: CF1 vs CF2 | Semi2: CF3 vs CF4
     rounds=[
       {nombre:'PLAYOFFS',partidos:[
-        {rKey:'po',mi:0,t1:p2(0),t2:p2(2),apaL1:l2(0),apaL2:l2(2),nota:'Gan. enfrenta 1° Zona B'},
-        {rKey:'po',mi:1,t1:p2(1),t2:p2(3),apaL1:l2(1),apaL2:l2(3),nota:'Gan. enfrenta 1° Zona A'},
+        {rKey:'po',mi:0,t1:p2(0),t2:p2(2),apaL1:l2(0),apaL2:l2(2),nota:'Gan. enfrenta 1° Zona B',feedsInto:3},
+        {rKey:'po',mi:1,t1:p2(3),t2:p2(4),apaL1:l2(3),apaL2:l2(4),nota:'Gan. enfrenta 1° Zona A',feedsInto:1},
       ]},
       {nombre:'CUARTOS DE FINAL',partidos:[
-        {rKey:'cuartos',mi:0,t1:p1(1),t2:gan('po',0,'?','?'),apaL1:l1(1),apaL2:'PO1'},
-        {rKey:'cuartos',mi:1,t1:p1(0),t2:gan('po',1,'?','?'),apaL1:l1(0),apaL2:'PO2'},
-        {rKey:'cuartos',mi:2,t1:p1(2),t2:p1(4),apaL1:l1(2),apaL2:l1(4)},
-        {rKey:'cuartos',mi:3,t1:p1(3),t2:p2(4),apaL1:l1(3),apaL2:l2(4)},
+        {rKey:'cuartos',mi:0,t1:p2(1),t2:p1(2),apaL1:l2(1),apaL2:l1(2)},
+        {rKey:'cuartos',mi:1,t1:p1(0),t2:gan('po',1,'?','?'),apaL1:l1(0),apaL2:'GanPO2'},
+        {rKey:'cuartos',mi:2,t1:p1(3),t2:p1(4),apaL1:l1(3),apaL2:l1(4)},
+        {rKey:'cuartos',mi:3,t1:p1(1),t2:gan('po',0,'?','?'),apaL1:l1(1),apaL2:'GanPO1'},
       ]},
       {nombre:'SEMIFINAL',partidos:[
-        {rKey:'semi',mi:0,t1:gan('cuartos',0,'?','?'),t2:gan('cuartos',1,p1(1),'?')},
-        {rKey:'semi',mi:1,t1:gan('cuartos',2,p1(2),'?'),t2:gan('cuartos',3,'?','?')},
+        {rKey:'semi',mi:0,t1:gan('cuartos',0,'?','?'),t2:gan('cuartos',1,'?','?')},
+        {rKey:'semi',mi:1,t1:gan('cuartos',2,'?','?'),t2:gan('cuartos',3,'?','?')},
       ]},
       {nombre:'FINAL',partidos:[
         {rKey:'final',mi:0,t1:gan('semi',0,'?','?'),t2:gan('semi',1,'?','?')},
