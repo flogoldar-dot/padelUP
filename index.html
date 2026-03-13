@@ -1449,10 +1449,7 @@ function renderCarga() {
   // Sortear button in header
   const sortearBtn=`<button class="btn btn-ghost btn-sm" onclick="sortearZonas(${cat.id})" style="font-size:12px">🔀 Sortear zonas</button>`;
 
-  el.innerHTML=`<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;flex-wrap:wrap;gap:8px">
-    <div style="font-size:11px;color:#6b7280">${cat.total} parejas · ${cat.dist.length} zonas</div>
-    ${sortearBtn}
-  </div>`+cat.dist.map((npp,zi)=>{
+  const zonaCards = cat.dist.map((npp,zi)=>{
     const zlbl=String.fromCharCode(65+zi);
     const cms=combos(npp);
     const parejas=Array.from({length:npp},(_,pi)=>{
@@ -1548,7 +1545,12 @@ function renderCarga() {
         <div>${partidos}</div>
       </div>
     </div>`;
-  }).join('') + renderCargaEliminatoria(cat);
+  }).join('');
+
+  el.innerHTML = `<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;flex-wrap:wrap;gap:8px">
+    <div style="font-size:11px;color:#6b7280">${cat.total} parejas · ${cat.dist.length} zonas</div>
+    ${sortearBtn}
+  </div>` + zonaCards + renderCargaEliminatoria(cat);
 }
 
 function renderCargaEliminatoria(cat) {
