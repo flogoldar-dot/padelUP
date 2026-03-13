@@ -2743,8 +2743,9 @@ function renderBracket() {
       const apaL1 = p.apaL1||'';
       const apaL2 = p.apaL2||'';
       const m = getM(p.rKey, p.mi);
-      const d1 = m.t1||(apaL1||p.t1||'—');
-      const d2 = m.t2||(apaL2||p.t2||'—');
+      const _isGeneric = s => !s || /^(Gan\.|2°|3°|GanPO|\?)/.test(s.trim());
+      const d1 = (!_isGeneric(m.t1)) ? m.t1 : (apaL1||p.t1||'—');
+      const d2 = (!_isGeneric(m.t2)) ? m.t2 : (apaL2||p.t2||'—');
       const done = m.winner!=null;
       const sc1 = [m.s1a,m.s2a,m.s3a].filter(v=>v!==''&&v!=null).join('/');
       const sc2 = [m.s1b,m.s2b,m.s3b].filter(v=>v!==''&&v!=null).join('/');
@@ -2825,10 +2826,13 @@ let rCtx=null;
 function openResult(catId,ri,mi,t1,t2){
   if(!IS_ADMIN) return; // solo admin puede editar
   const cat=S.cats.find(c=>c.id===catId);
-  // ri can be a string rKey (new) or number (legacy)
   const key=`${catId}-${ri}-${mi}`;
   const m=cat.bracket[key]||{t1,t2,s1a:'',s2a:'',s3a:'',s1b:'',s2b:'',s3b:'',winner:null};
-  rCtx={catId,ri,mi,key,t1:m.t1||t1,t2:m.t2||t2};
+  // Preferir el nombre calculado fresco (t1/t2 del onclick) sobre el guardado si el guardado es un label genérico
+  const isGeneric = s => !s || /^(Gan\.|2°|3°|GanPO|\?)/.test(s.trim());
+  const realT1 = (!isGeneric(t1)) ? t1 : (!isGeneric(m.t1) ? m.t1 : t1);
+  const realT2 = (!isGeneric(t2)) ? t2 : (!isGeneric(m.t2) ? m.t2 : t2);
+  rCtx={catId,ri,mi,key,t1:realT1,t2:realT2};
   document.getElementById('rm-subtitle').textContent=`${rCtx.t1} vs ${rCtx.t2}`;
   document.getElementById('rm-cancha').value = m.cancha || '';
   document.getElementById('rm-hora').value = m.hora || '';
